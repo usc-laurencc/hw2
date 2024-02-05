@@ -1,3 +1,5 @@
+#include <string>
+#include <set>
 #include "product.h"
 
 class Movie : public Product {
