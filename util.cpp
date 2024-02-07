@@ -19,7 +19,7 @@ std::set<std::string> parseStringToWords(string rawWords)
   std::string keyword("");
   for (std::string::iterator it = rawWords.begin(); it != rawWords.end(); ++it) {
     // if the keyword is valid, add to the set
-    if (((*it).isspace() || (*it).ispunct())) {
+    if ((isspace(*it) || ispunct(*it))) {
       if (keyword.size() > 1) 
         list.insert(keyword);
       

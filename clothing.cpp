@@ -1,7 +1,5 @@
 #include <sstream>
 #include <iomanip>
-#include "product.h"
-#include "util.h"
 #include "clothing.h"
 
 using namespace std;
@@ -32,7 +30,7 @@ std::set<std::string> Clothing::keywords() const
 std::string Clothing::displayString() const 
 {
   std::stringstream ss;
-  ss << name_ << "\nSize" << size << " Brand: " << brand + "\n" << price_ << " " << qty_ << " left.";
+  ss << name_ << "\nSize: " << size << " Brand: " << brand + "\n" << price_ << " " << qty_ << " left.";
   return ss.str();
 }
 

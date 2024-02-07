@@ -1,6 +1,7 @@
 #include <string>
 #include <set>
 #include "product.h"
+#include "util.h"
 
 class Book : public Product {
 public:

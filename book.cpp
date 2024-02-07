@@ -1,7 +1,5 @@
 #include <sstream>
 #include <iomanip>
-#include "product.h"
-#include "util.h"
 #include "book.h"
 
 using namespace std;
@@ -33,7 +31,7 @@ std::set<std::string> Book::keywords() const
 std::string Book::displayString() const 
 {
   std::stringstream ss;
-  ss << name_ << "\nAuthor" << author << " ISBN: " << ISBN + "\n" << price_ << " " << qty_ << " left.";
+  ss << name_ << "\nAuthor: " << author << " ISBN: " << ISBN + "\n" << price_ << " " << qty_ << " left.";
   return ss.str();
 }
 

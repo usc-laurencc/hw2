@@ -5,6 +5,21 @@
 
 using namespace std;
 
+MyDataStore::MyDataStore() : 
+  DataStore()
+{
+
+}
+
+MyDataStore::~MyDataStore() {
+  for (std::set<Product*>::iterator it = products.begin(); it != products.end(); ++it) {
+    delete *it;
+  }
+  for (std::set<User*>::iterator it = users.begin(); it != users.end(); ++it) {
+    delete *it;
+  }
+}
+
 void MyDataStore::addProduct(Product* p)
 {
   products.insert(p);
@@ -77,4 +92,14 @@ void MyDataStore::dump(std::ostream& ofile)
     (*it)->dump(ofile);
   }
   ofile << "</users>" << endl;
+}
+
+User* MyDataStore::getUser(std::string username)
+{
+  for (std::set<User*>::iterator it = users.begin(); it != users.end(); ++it) {
+    // if this user is correct
+    if (convToLower((*it)->getName()).compare(convToLower(username)) == 0)
+      return *it;
+  }
+  return NULL;
 }
